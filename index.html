@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Home - Class Activities</title>
+        <link rel="stylesheet" href="A2_Style.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    </head>
+    <body>
+
+        <h1>INST 377 - Activities</h1>
+
+        <nav>
+          <ul>
+            <li onclick="window.location.href='index.html'">Home</li>
+            <li onclick="window.location.href='stocks.html'">Stocks</li>
+            <li onclick="window.location.href='dogs.html'">Dogs</li>
+          </ul>
+        </nav>
+      
+        <h2>These are some different activities we can try!</h2>
+
+      
+
+        <div id="quote-box" style="margin: 20px 0; font-style: italic;">
+            <strong>
+                Quote of the Page Loading
+            </strong>
+        </div>
+      
+        <button class="button-27" onclick="window.location.href='stocks.html'">Go to Stocks</button>
+        <button class="button-27" onclick="window.location.href='dogs.html'">Go to Dogs</button>
+      
+        <div id="audio-box">
+          <h3>Voice Commands:</h3>
+          <ul>
+            <p>Ensure your mic is enabled to use this feature.</p>
+
+            <li>Navigate to a Different Page 
+                <ul>
+                    <li>Say<strong>"Navigate to &ltpage&gt"</strong> to go to Home, Stocks, or Dogs</li>
+                </ul>
+            </li>
+            <li>Change the Page color 
+                <ul>
+                    <li>Change the Page color<strong>"Change the color to &ltcolor&gt"</strong> to change background</li>
+                </ul>
+            </li>
+            <li>Say Hello Back to you!
+                <ul>
+                    <li>Say:<strong>Hello</strong></li>
+                </ul>
+            </li>
+          </ul>
+          <button class="button-12" onclick="startVoice()">Turn On Audio</button>
+          <button class="button-12" onclick="stopVoice()">Turn Off Audio</button>
+        </div>
+      
+        <script src="voiceCommand.js"></script>
+    
+        <script>
+        async function fetchQuote() {
+        try {
+            res = await fetch('https://api.quotable.io/random');
+            data = await res.json();
+            document.getElementById('quote-box').innerText = `"${data.content}" — ${data.author}`;
+        } catch (error) {
+            document.getElementById('quote-box').innerText = "Could not fetch a quote at this time.";
+            console.error("Error fetching quote:", error);
+        }
+        }
+
+          fetchQuote();
+        </script>
+      </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stocks - Class Activities</title>
+  <link rel="stylesheet" href="A2_Style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='index.html'">Home</li>
+      <li onclick="window.location.href='stocks.html'">Stocks</li>
+      <li onclick="window.location.href='dogs.html'">Dogs</li>
+    </ul>
+  </nav>
+
+  <h1>Stock Lookup</h1>
+
+  <input type="text" id="tickerInput" placeholder="Enter Stock Ticker" maxlength="5" />
+  <select id="daysSelect">
+    <option value="30">30 Days</option>
+    <option value="60">60 Days</option>
+    <option value="90">90 Days</option>
+  </select>
+  <button class="button" onclick="fetchStockData()">Lookup</button>
+
+
+  <canvas id="stockChart"></canvas>
+
+  <h2>Top 5 Reddit Stocks</h2>
+  <table id ="stockTable">
+    <thead>
+      <tr>
+        <th>Ticker</th>
+        <th>Comment Count</th>
+        <th>Sentiment</th>
+      </tr>
+    </thead>
+    <tbody id="redditTable"></tbody>
+  </table>
+
+  <div id="audio-box">
+    <h3>Voice Commands:</h3>
+    <ul>
+      <p>Ensure your mic is enabled to use this feature.</p>
+
+      <li>Navigate to a Different Page 
+          <ul>
+              <li>Say<strong>"Navigate to &ltpage&gt"</strong> to go to Home, Stocks, or Dogs</li>
+          </ul>
+      </li>
+      <li>Change the Page color 
+          <ul>
+              <li>Change the Page color<strong>"Change the color to &ltcolor&gt"</strong> to change background</li>
+          </ul>
+      </li>
+      <li>Say Hello Back to you!
+          <ul>
+              <li>Say:<strong>Hello</strong></li>
+          </ul>
+      </li>
+    </ul>
+    <button class="button-12" onclick="startVoice()">Turn On Audio</button>
+    <button class="button-12" onclick="stopVoice()">Turn Off Audio</button>
+  </div>
+
+  <!-- Shared and Page-Specific Scripts -->
+  <script src="voiceCommand.js"></script>
+  <script src="stocks.js"></script>
+</body>
+</html>
