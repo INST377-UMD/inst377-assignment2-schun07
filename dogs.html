@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <title>Dogs - Class Activities</title>
+  <link rel="stylesheet" href="A2_Style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-slider"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li onclick="window.location.href='index.html'">Home</li>
+      <li onclick="window.location.href='stocks.html'">Stocks</li>
+      <li onclick="window.location.href='dogs.html'">Dogs</li>
+    </ul>
+  </nav>
+
+  <h1>Dog Gallery</h1>
+
+  <!-- Carousel -->
+  <div class="slider" data-simple-slider>
+    <!-- Images will be added dynamically -->
+  </div>
+
+  <h2>Dog Breeds</h2>
+  <div id="breed-buttons"></div>
+
+  <!-- Breed Info Container -->
+  <div id="breed-info" style="margin-top: 20px; padding: 15px; background: white; display: none; border-radius: 8px;">
+    <h3 id="breed-name"></h3>
+    <p id="breed-description"></p>
+    <p id="breed-lifespan"></p>
+  </div>
+
+
+
+  <div id="audio-box">
+    <h3>Voice Commands:</h3>
+    <ul>
+      <p>Ensure your mic is enabled to use this feature.</p>
+
+      <li>Navigate to a Different Page 
+          <ul>
+              <li>Say<strong>"Navigate to &ltpage&gt"</strong> to go to Home, Stocks, or Dogs</li>
+          </ul>
+      </li>
+      <li>Change the Page color 
+          <ul>
+              <li>Change the Page color<strong>"Change the color to &ltcolor&gt"</strong> to change background</li>
+          </ul>
+      </li>
+      <li>Say Hello Back to you!
+          <ul>
+              <li>Say:<strong>Hello</strong></li>
+          </ul>
+      </li>
+    </ul>
+    <button class="button-12" onclick="startVoice()">Turn On Audio</button>
+    <button class="button-12" onclick="stopVoice()">Turn Off Audio</button>
+  </div>
+
+  <!-- Shared and Page-Specific Scripts -->
+  <script src="script.js"></script>
+  <script src="dogs.js"></script>
+</body>
+</html>
